@@ -1,0 +1,60 @@
+.navlink{
+    text-decoration: none;
+    color: inherit;
+    margin: 5vw;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: sticky;
+}
+#changerinput{
+    display:none;
+}
+.modeChanger{
+    background-color: rgb(79, 106, 83);
+    border-radius: 15px;
+    width: 44px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:3px;
+    position:relative;
+}
+.modeChanger:hover{
+    cursor: pointer;
+}
+.fa-moon{
+    color:rgb(201, 216, 133);
+}
+.fa-sun{
+    color:rgb(209, 197, 22);
+}
+.ball{
+    position:absolute;
+    background: cornflowerblue;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.5s ease 0s;
+}
+
+
+#changerinput:checked + .modeChanger{
+    background-color:rgb(43, 40, 40);
+    animation: changebg 0.5s linear 0s 1;
+}
+#changerinput:checked + .modeChanger .ball{
+    transform: translateX(25px);
+}
+
+@keyframes changebg {
+    from{
+        background-color: rgb(79, 106, 83);
+    }
+    to{
+        background-color: rgb(43, 40, 40);
+    }
+}

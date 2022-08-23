@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+:root{
+  --two-bg: #0f0d0d;
+  --two-bg-sun: #d9b5e6;
+  --mostSearched-bg:#050907;
+  --mostSearched-bg-sun:#9f9e5c;
+}
+main{
+  display:grid;
+}
+
+.home{
+    height: 100%;
+    font-family: 'Bangers', cursive;
+}
+.one{
+    background: url('../img/bg.gif');
+    height: 349px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+  }
+  #header1 {
+    font-size: min(max(25px,7vw),45px);
+    color: #a2a2a2;;
+    text-shadow: 10px 10px 10px #012544;
+  }
+
+  .homeSection.two {
+    height: fit-content;
+    background: #0f0d0d;
+    position:relative;
+    padding-bottom: 10vh;
+  }
+  .mostSearched::after{
+    background: inherit;
+    width: 50px;
+    height: 50px;
+    content:'';
+    position: absolute;
+    bottom: -14px;
+    transform: skew(0,-30deg);
+    left: 50%;
+  }
+  .mostSearched::before{
+    background: inherit;
+    content:'';
+    width: 50px;
+    height: 50px;
+    position:absolute;
+    transform:skew(0,30deg);
+    bottom:-14px;
+    right: 50%;
+  }
+  .homeSection.three {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .festival-name {
+    margin: 15px;
+    padding: 5px;
+    width: 35vw;
+    border: 2px solid #064a86;
+    background: #00ffff21;
+    height: 25px;
+    font-size: 1.3em;
+    color: aliceblue;
+      min-width: 80px;
+    max-width: 350px;
+  }
+  .search {
+    padding: 1vw;
+    background: #468c61a6;
+  border: 2px solid #44739b6b;
+  border-radius: 5px;
+  }
+  .search:hover{
+    cursor:pointer;
+    background: #468c61bf;
+    border: 2px solid #847b61;
+  }
+  #header-sthree{
+    font-size: 2.8em;
+  }
+
+  #chevrons{
+    position: absolute;
+    bottom: 15%;
+    font-size: xxx-large;
+    color: #2a8667;
+    transition: transform 1s ease;
+  }
+  #chevrons:hover{
+    cursor: pointer;
+    transform: translateY(20px) scale(1.2);
+    text-shadow: 1px 10px 10px #3a76aa;
+  }
+
+  #overall{
+    position: relative;
+  }
+
+  #overall h2,#database h2{
+    margin: 65px;
+    text-align: center;
+    font-size: min(max(15px,8vw),49px);
+  }
+  #overall p{
+    font-size: min(max(20px,4vw),38px);
+    width: 62vw;
+    margin-bottom: 9vw;
+  }
+  #overall-p1,#overall-p3 {
+    margin: 65px 65px 65px 5vw;
+  }
+  #overall-p2 {
+    margin: 65px 10px 65px 29vw;
+  }
+  #database ul{
+    list-style-type: none;
+    padding: 0;
+  }
+  #database li{
+    font-size: min(max(18px,5vw),40px);
+    text-align: center;
+    margin-top: 15vw;
+  }
+  .number{
+    margin-inline: 15vw 15px;
+  }
+
+
+  .mostSearched{
+    height: 400px;
+    position: relative;
+    background: var(--mostSearched-bg);
+    text-align: center;
+  }
+  .mostSearched h2{
+    font-size: min(max(25px,5vw),49px);
+    text-align: center;
+  }
+
+  /*Sun css*/
+  .search-sun{
+    background:#338251a6;
+  }
+  .festival-name-sun{
+    background: #2b5b5bd4;
+  }
