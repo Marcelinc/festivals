@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import '../css/Home.css'
+import '../scripts/homeObserve'
 
 function Home() {
   return (
