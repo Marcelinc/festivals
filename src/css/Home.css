@@ -16,7 +16,7 @@ main{
 }
 .one{
     background: url('../img/bg.gif');
-    height: 349px;
+    height: 505px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +24,13 @@ main{
     background-size: cover;
     background-position: bottom;
     position: relative;
+  }
+  .fade-in{
+    opacity:0;
+    transition: opacity 0.9s ease-in;
+  }
+  .fade-in.appear{
+    opacity:1;
   }
   #header1 {
     font-size: min(max(25px,7vw),45px);
@@ -37,6 +44,7 @@ main{
     position:relative;
     padding-bottom: 10vh;
   }
+
   .mostSearched::after{
     background: inherit;
     width: 50px;
@@ -87,6 +95,13 @@ main{
     background: #468c61bf;
     border: 2px solid #847b61;
   }
+  .search-fade{
+    opacity:0;
+    transition: opacity 1s ease-in;
+  }
+  .search-fade.appear{
+    opacity: 1;
+  }
   #header-sthree{
     font-size: 2.8em;
   }
@@ -96,7 +111,7 @@ main{
     bottom: 15%;
     font-size: xxx-large;
     color: #2a8667;
-    transition: transform 1s ease;
+    transition: transform 1s ease, opacity 3s ease-in;
   }
   #chevrons:hover{
     cursor: pointer;
@@ -106,6 +121,15 @@ main{
 
   #overall{
     position: relative;
+  }
+  .overall{
+    opacity:0;
+    transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+    transform: translateX(-50px);
+  }
+  .overall.appear{
+    opacity:1;
+    transform: translateX(0);
   }
 
   #overall h2,#database h2{
@@ -124,11 +148,11 @@ main{
   #overall-p2 {
     margin: 65px 10px 65px 29vw;
   }
-  #database ul{
+  /*#database ul{
     list-style-type: none;
     padding: 0;
-  }
-  #database li{
+  }*/
+  #database p{
     font-size: min(max(18px,5vw),40px);
     text-align: center;
     margin-top: 15vw;
@@ -147,6 +171,13 @@ main{
   .mostSearched h2{
     font-size: min(max(25px,5vw),49px);
     text-align: center;
+  }
+  .searched{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  .searched.appear{
+    opacity:1;
   }
 
   /*Sun css*/
