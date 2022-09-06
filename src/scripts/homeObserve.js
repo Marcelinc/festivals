@@ -62,11 +62,11 @@ const sectionThreeObserver = new IntersectionObserver(function(entries,observer)
 const optionsFour = optionsTwo
 const sectionFourObserver = new IntersectionObserver(function(entries,observer){
     entries.forEach(entry => {
-        console.log(entry)
+        //console.log(entry)
         if(!entry.isIntersecting)
             return
         
-        console.log(entry.target.tagName)
+        //console.log(entry.target.tagName)
         entry.target.classList.add('appear')
         observer.unobserve(entry.target)
     })
