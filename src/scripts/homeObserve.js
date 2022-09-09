@@ -74,7 +74,8 @@ const sectionFourObserver = new IntersectionObserver(function(entries,observer){
 
 
 //Initialize observers
-document.addEventListener('DOMContentLoaded', () => {
+//if(window.location.pathname === '/')
+export const initializeObservers = () => {
     //Section one
     const sectionOne = document.querySelector('.one').childNodes
     //console.log(sections)
@@ -96,7 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //Section four
     const sectionFour = document.querySelector('.three').childNodes
     sectionFour.forEach(elem => sectionFourObserver.observe(elem))
-})
+}
+//document.addEventListener('DOMContentLoaded', () => {
+    
+//})
 
 
 

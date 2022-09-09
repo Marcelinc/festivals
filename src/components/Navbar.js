@@ -10,19 +10,20 @@ function Navbar() {
     var rs = getComputedStyle(r);
 
     useEffect(()=> {
-      document.body.classList.toggle('body-sun')
-      document.querySelector('#search').classList.toggle('search-sun')
-      document.querySelector('#festival-name').classList.toggle('festival-name-sun')
-      if(!checked){
-        document.querySelector('.two').style.background = rs.getPropertyValue('--two-bg-sun')
-        document.querySelector('.mostSearched').style.background = rs.getPropertyValue('--mostSearched-bg-sun')
+      if(window.location.pathname === '/'){
+        document.body.classList.toggle('body-sun')
+        document.querySelector('#search').classList.toggle('search-sun')
+        document.querySelector('#festival-name').classList.toggle('festival-name-sun')
+        if(!checked){
+          document.querySelector('.two').style.background = rs.getPropertyValue('--two-bg-sun')
+          document.querySelector('.mostSearched').style.background = rs.getPropertyValue('--mostSearched-bg-sun')
+        }
+        else{
+          document.querySelector('.two').style.background = rs.getPropertyValue('--two-bg')
+          document.querySelector('.mostSearched').style.background = rs.getPropertyValue('--mostSearched-bg')
+        } 
       }
-      else{
-        document.querySelector('.two').style.background = rs.getPropertyValue('--two-bg')
-        document.querySelector('.mostSearched').style.background = rs.getPropertyValue('--mostSearched-bg')
-      } 
-        
-    },[checked])
+    },[checked,rs,window.location.pathname])
 
 
   return (
@@ -36,6 +37,7 @@ function Navbar() {
         <div className='nav-links'>
             <Link className='navlink' to='/'>Home</Link>
             <Link className='navlink' to='/browser'>Browser</Link>
+            <Link className='navlink' to='/collection'>Collection</Link>
         </div>
     </div>
   )

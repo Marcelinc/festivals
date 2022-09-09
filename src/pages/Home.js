@@ -1,21 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import '../css/Home.css'
-import '../scripts/homeObserve'
 import '../scripts/scrollAnimation'
+import { initializeObservers } from '../scripts/homeObserve'
+import { initializeScrollAnimation } from '../scripts/scrollAnimation'
 
 function Home() {
+
+  useEffect(() => {
+    initializeObservers()
+    initializeScrollAnimation()
+  },[])
+
   return (
     <div className='home'>
       <Navbar/>
       <main>
         <section className='homeSection one'>
           <h2 id='header1' className='homeHeader fade-in'>Dive into music world</h2>
-          <i className="fa-solid fa-angles-down fade-in" id='chevrons'><a id='one-href' href='#'></a></i>
+          <i className="fa-solid fa-angles-down fade-in" id='chevrons'></i>
         </section>
         <section className='homeSection two'>
           <div id='overall'>
-            <a href='#' id='two-href'></a>
             <h2 className='overall'>Did you know?</h2>
             <p id='overall-p1' className='overall'>Every year all over the world there are events bringing together fans of various music </p>
             <p id='overall-p2' className='overall'>We have created browser that helps you find place in this big world of music parties where you can enjoy time</p>
