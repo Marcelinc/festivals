@@ -1,6 +1,7 @@
 const { GraphQLObjectType, GraphQLID, 
     GraphQLString, GraphQLList, GraphQLSchema, 
     GraphQLInt, GraphQLNonNull, GraphQLInputObjectType } = require("graphql");
+const { default: mongoose } = require("mongoose");
 
 //Mongoose models
 const Festival = require('../models/Festival')
@@ -123,7 +124,7 @@ const mutation = new GraphQLObjectType({
             }
         },
 
-        //Delete add genre
+        //Delete music genre
         deleteMusicGenre: {
             type: MusicGenreType,
             args: {
@@ -143,6 +144,7 @@ const mutation = new GraphQLObjectType({
                 musicTags: {type: GraphQLNonNull(GraphQLList(MusicTagInput))}
             },
             resolve(parent,args){
+                console.log(args)
                 var festival = new Festival({
                     name: args.name,
                     place: args.place,
@@ -150,6 +152,40 @@ const mutation = new GraphQLObjectType({
                 })
 
                 return festival.save()
+            }
+        },
+        //Delete festival
+        deleteFestival: {
+            type: FestivalType,
+            args: {
+                id: {type: GraphQLNonNull(GraphQLID)}
+            },
+            resolve(parent,args){
+                return Festival.findByIdAndRemove(args.id)
+            }
+        },
+        //Update festival
+        updateFestival: {
+            type: FestivalType,
+            args: {
+                id: {type: GraphQLNonNull(GraphQLID)},
+                name: {type: GraphQLString},
+                views: {type: GraphQLInt},
+                musicTags: {type: GraphQLList(MusicTagInput)},
+                place: {type: PlaceInput}
+            },
+            resolve(parent,args){
+                //console.log(args)
+                var tags = args.musicTags.map(tag => mongoose.Types.ObjectId(tag))
+                //console.log(tags)
+                return Festival.findByIdAndUpdate(args.id, {
+                    $set: {
+                        name: args.name,
+                        place: args.place,
+                        musicTags: tags,
+                        views: args.views
+                    }
+                }, {new: true})
             }
         }
     }
