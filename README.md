@@ -3,6 +3,7 @@
 * [![React][React.js]][React-url]
 * [![Express][Express.js]][Express-url]
 * [![MongoDB][Mongo.db]][Mongo-url]
+* [![GraphQL][Graph.ql]][Graph-url]
 
 
 
@@ -15,3 +16,5 @@
 [Express-url]: https://expressjs.com/
 [Mongo.db]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
 [Mongo-url]:https://www.mongodb.com/
+[Graph.ql]: https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white
+[Graph-url]: https://graphql.org/
