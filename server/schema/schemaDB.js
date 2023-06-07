@@ -62,7 +62,8 @@ const FestivalType = new GraphQLObjectType({
                 return tags
             }
         },
-        views: {type: GraphQLInt}
+        views: {type: GraphQLInt},
+        image: {type: GraphQLString}
     })
 })
 
@@ -141,7 +142,8 @@ const mutation = new GraphQLObjectType({
             args: {
                 name: {type: GraphQLNonNull(GraphQLString)},
                 place: {type: GraphQLNonNull(PlaceInput) },
-                musicTags: {type: GraphQLNonNull(GraphQLList(MusicTagInput))}
+                musicTags: {type: GraphQLNonNull(GraphQLList(MusicTagInput))},
+                image: {type: GraphQLString}
             },
             resolve(parent,args){
                 console.log(args)
@@ -172,7 +174,8 @@ const mutation = new GraphQLObjectType({
                 name: {type: GraphQLString},
                 views: {type: GraphQLInt},
                 musicTags: {type: GraphQLList(MusicTagInput)},
-                place: {type: PlaceInput}
+                place: {type: PlaceInput},
+                image: {type: GraphQLString}
             },
             resolve(parent,args){
                 //console.log(args)

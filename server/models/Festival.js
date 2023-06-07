@@ -22,6 +22,10 @@ const festivalSchema = new mongoose.Schema({
     views: {
         type: Number,
         default: 0
+    },
+    image: {
+        type: String,
+        default:'default2.jpg'
     }
 })
 

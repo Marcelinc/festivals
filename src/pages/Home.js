@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import '../css/Home.css'
 import '../scripts/scrollAnimation'
@@ -7,10 +8,19 @@ import { initializeScrollAnimation } from '../scripts/scrollAnimation'
 
 function Home() {
 
+  const navigation = useNavigate()
+  const [search,setSearch] = useState('')
+  const [notify,setNotify] = useState(false)
+
   useEffect(() => {
     initializeObservers()
     initializeScrollAnimation()
-  },[])
+  },[notify])
+
+  const submit = () => {
+    search && navigation('/browser',{state: {search}}) 
+    !search && setNotify(true)
+  }
 
   return (
     <div className='home'>
@@ -40,8 +50,9 @@ function Home() {
         </section>
         <section className='homeSection three'>
           <h2 id='header-sthree' className='search-fade'>Find festival</h2>
-          <input type='text' placeholder='Name...' id='festival-name' className='festival-name search-fade'></input>
-          <button id='search' className='search search-fade'>Search</button>  
+          <input type='text' placeholder='Name...' id='festival-name' className='festival-name search-fade' onChange={e => setSearch(e.target.value)}></input>
+          <button id='search' className='search search-fade' onClick={submit}>Search</button>  
+          {notify && <p className='notification'>Enter the name</p> }
         </section>
       </main>
     </div>

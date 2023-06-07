@@ -180,6 +180,12 @@ main{
     opacity:1;
   }
 
+  .notification {
+    color: #b31505;
+    font-size: 1.4em;
+    transition: opacity 2s ease;
+  }
+
   /*Sun css*/
   .search-sun{
     background:#338251a6;

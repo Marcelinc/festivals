@@ -23,7 +23,7 @@ function Navbar() {
           document.querySelector('.mostSearched').style.background = rs.getPropertyValue('--mostSearched-bg')
         } 
       }
-    },[checked,rs,window.location.pathname])
+    },[checked,window.location.pathname])
 
 
   return (
