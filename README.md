@@ -1,9 +1,16 @@
+#Festival browser, not finished
+
 ###Built With
 * [![JavaScript][JavaScript.img]][JavaScript-url]
 * [![React][React.js]][React-url]
 * [![Express][Express.js]][Express-url]
 * [![MongoDB][Mongo.db]][Mongo-url]
 * [![GraphQL][Graph.ql]][Graph-url]
+
+
+###Screens
+![obraz](https://github.com/Marcelinc/festivals/assets/82237491/5224a257-cc23-4549-be07-ac3c34439533)
+![obraz](https://github.com/Marcelinc/festivals/assets/82237491/94189f1f-fc2d-4e49-96c2-ac3ef18fe995)
 
 
 
